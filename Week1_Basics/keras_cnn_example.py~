@@ -1,0 +1,19 @@
+# Sreela Kodali - First CNN on Keras
+# June 20th, 2017
+
+import numpy as np
+np.random.seed(123)
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Activation, Flatten
+from keras.layers import Convolution2D, MaxPooling2D
+from keras.utils import np_utils
+from keras.datasets import mnist
+
+# Loading image data from MNIST
+(xtrain, ytrain), (xtest, ytest) = mnist.load_data()
+
+#shape of dataset
+print(xtrain.shape)
+
+from matplotlib import pyplot as plt
+plt.imshow(xtrain[0])
