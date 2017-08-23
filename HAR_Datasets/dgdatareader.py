@@ -80,8 +80,23 @@ dstargets_valDG = dstargets_valDG +1
 dstargets_testDG = dstargets_testDG +1
 dstargets_trainDG = dstargets_trainDG +1
 
+m = np.amax(dsinputs_trainDG)
+dsinputs_trainDG = np.multiply(np.divide(dsinputs_trainDG, m), 32)
+dsinputs_testDG = np.multiply(np.divide(dsinputs_testDG, m), 32)
+dsinputs_valDG = np.multiply(np.divide(dsinputs_valDG, m), 32)
+
+#Checking Maximum value
+print(np.amax(dsinputs_testDG))
+print(np.amax(dsinputs_trainDG))
+print(np.amax(dsinputs_valDG))
+
+print('Testing for NaN presence')
+print(np.isnan(np.sum(dsinputs_testDG)))
+print(np.isnan(np.sum(dsinputs_trainDG)))
+print(np.isnan(np.sum(dsinputs_valDG)))
+
 # Create new hdf5 file with 3 subgroups: test, training, and validation
-f = h5py.File('DoG.h5', 'w')
+f = h5py.File('DoG_rescale.h5', 'w')
 dset1 = f.create_dataset('/test/inputs', data = dsinputs_testDG, dtype='float64')
 dset2 = f.create_dataset('/test/targets', data = dstargets_testDG, dtype='int64')
 dset3 = f.create_dataset('/training/inputs', data = dsinputs_trainDG, dtype='float64')

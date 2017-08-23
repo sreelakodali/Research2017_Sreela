@@ -84,14 +84,20 @@ for name in trainfiles:
 # Replace nans with linearly interpolated values per column
 dsinputs_trainPAMAP = FixNans(dsinputs_trainPAMAP)
 
+
 # Print statements to see if all discrete classes present in each dataset
 #print(np.unique(dstargets_valPAMAP))
 #print(np.unique(dstargets_testPAMAP))
 #print(np.unique(dstargets_trainPAMAP))
 
+
+m = np.amax(dsinputs_trainPAMAP)
+dsinputs_trainPAMAP = np.multiply(np.divide(dsinputs_trainPAMAP, m), 32)
+dsinputs_testPAMAP = np.multiply(np.divide(dsinputs_testPAMAP, m), 32)
+dsinputs_valPAMAP = np.multiply(np.divide(dsinputs_valPAMAP, m), 32)
+
 # Remapping the discrete class number 0 1 2 3 4 5 6 7 12 13 16 17 24 --> 1 2 3 4 5 6 7 8 9 10 11 12 13
 # so it's in a more usable form for the FC NN model
-
 targets = [dstargets_valPAMAP, dstargets_testPAMAP, dstargets_trainPAMAP]
 j = 0
 for t in targets:
@@ -123,7 +129,7 @@ print(np.isnan(np.sum(dsinputs_trainPAMAP)))
 
 
 # Create new hdf5 file with 3 subgroups: test, training, and validation
-f = h5py.File('pamap2_nanLI.h5', 'w')
+f = h5py.File('pamap2_rescale_nanLI.h5', 'w')
 dset1 = f.create_dataset('/test/inputs', data = dsinputs_testPAMAP, dtype='float64')
 dset2 = f.create_dataset('/test/targets', data = targets[1], dtype='int64')
 dset3 = f.create_dataset('/training/inputs', data = dsinputs_trainPAMAP, dtype='float64')

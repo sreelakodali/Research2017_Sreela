@@ -9,6 +9,7 @@
 import numpy as np
 import h5py
 import glob
+import os
 
 
 # Helper function that interprets the labels.txt file and populates the
@@ -78,6 +79,7 @@ final = np.concatenate((inputs, targets), axis=1)
 x = 770774
 y = np.shape(final)[1]-1 # last column of the dataset
 
+test = final[x:,:]
 #Set the inputs
 train_inputs = final[0:x,:y]
 test_inputs = final[x:,:y]
@@ -88,13 +90,36 @@ train_targets = final[0:x,y]
 test_targets = final[x:,y]
 
 # Ensure all the different classes are in both datasets
-print("uniqueness of sets")
-print(np.unique(train_targets))
-print(np.unique(test_targets))
+#print("uniqueness of sets")
+#print(np.unique(train_targets))
+#print(np.unique(test_targets))
+
+m = np.mean(test_inputs, axis=0)
+r = np.ptp(test_inputs, axis=0)
+s = np.std(test_inputs, axis=0)
+  
+print("MEAN:")
+print(m)
+print("RANGE:")
+print(r)
+print("STDEV:")
+print(s) 
+
+#filename = 'UCISmartphoneTest.txt'
+#f = open(filename,"w+")
+#np.savetxt(filename, test)
+#f.close()
+
+iphonepath = '/Users/Sreela/Downloads/HAR_*.csv'
+newest = max(glob.iglob(iphonepath), key=os.path.getctime)
+test_inputsiPhone = np.genfromtxt(newest, delimiter=',')
+test_targetsiPhone = np.zeros((np.shape(test_inputsiPhone)[0],))
+test_targetsiPhone[90:3600] = 1
+test_targetsiPhone = test_targetsiPhone + 1
 
 # Create new hdf5 file with 2 subgroups: test and training
-f = h5py.File('UCISmartphoneRaw.h5', 'w')
-dset1 = f.create_dataset('/test/inputs', data = test_inputs, dtype='float64')
-dset2 = f.create_dataset('/test/targets', data = test_targets, dtype='int64')
+f = h5py.File('UCISmartphoneRawiPhone.h5', 'w')
+dset1 = f.create_dataset('/test/inputs', data = test_inputsiPhone, dtype='float64')
+dset2 = f.create_dataset('/test/targets', data = test_targetsiPhone, dtype='int64')
 dset3 = f.create_dataset('/training/inputs', data = train_inputs, dtype='float64')
 dset4 = f.create_dataset('/training/targets', data = train_targets, dtype='int64')

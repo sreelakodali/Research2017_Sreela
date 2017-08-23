@@ -73,7 +73,7 @@ i = 0
 #fit model and evaluate train and test performance for x epochs
 for x in epoch:
 	print('---EPOCH #:', x, '---')
-	model.fit(xtrain, ytrain, epochs=x, batch_size=10, verbose=0, validation_data=(xtest, ytest))
+	model.fit(xtrain, ytrain, epochs=x, batch_size=10, verbose=0, validation_data=(xtrain, ytrain))
 	trainPerformance = model.evaluate(xtrain, ytrain, verbose=0)
 	#print('Epoch #:', x, 'Train loss:', trainPerformance[0])
 	print('Epoch #:', x, 'Train accuracy:', trainPerformance[1])
