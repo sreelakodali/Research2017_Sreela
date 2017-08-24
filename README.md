@@ -8,9 +8,9 @@ An overview of my work:
 2) **Spreadsheet of DL Datasets** - summary of different deep learning datasets for different applications. Can be found here: https://docs.google.com/spreadsheets/d/1ajeK8-pnzMp9eDHcoDGjyhsU60la29nnQOqTpVo7UBI/edit?usp=sharing
 3) **HAR_Datasets/** - Dataset extraction and preprocessing scripts for different Human Activity Recognition Datasets
 4) **dl_models additional files/example models/** - DNN models for HAR datasets; can also be found in /group/vlsiarch/kodali/dl-models/dl_models/models/ directory
-    * performance of the models in dl-models and in the chip software simulation can be found in **"HAR Model Performance.xlsx"**
+    * model performance - **"HAR Model Performance.xlsx"**
 5) **8-8-2017_Presentation.pptx** - an update to the lab group on what I was working on
 6) **Demo/** - processing scripts and GUI for running a smartphone-based HAR demo
     * iOS Demo App - https://github.com/sreelakodali/HAR_DataApp_iOS
     * Video of Working Demo: https://drive.google.com/file/d/0B0H8tirs5BCRc0ZSMXNlYnR2bG8/view?usp=sharing
-    * performance of the demo in different phone orientations can be found in **"DifferentOrientationTestingDemo.xlsx"**
+    * different phone orientation performance - **"DifferentOrientationTestingDemo.xlsx"**
