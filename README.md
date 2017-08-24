@@ -10,4 +10,4 @@ An overview of my work:
 4) **dl_models additional files/example models/** - DNN models for HAR datasets
 5) **Demo** - processing and GUI for running a smartphone-based HAR demo
     * iOS Demo App - https://github.com/sreelakodali/HAR_DataApp_iOS
-6) Presentation of my work
+6) **Presentation of my work**
