@@ -5,6 +5,7 @@ Compatible with UCI Opportunity, Daphnet Gait, PAMAP2, UCI Smartphone Raw, UCI S
 This 5-layered model is based off of 2016 Hammerla et al paper: https://arxiv.org/pdf/1604.08880.pdf
 
 These files can be found in dl-models, in the **opportunityHAR branch**, or in this path:
+
 /group/vlsiarch/kodali/dl-models
 
 ## Preprocessing
