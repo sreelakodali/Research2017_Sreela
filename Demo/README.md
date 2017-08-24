@@ -18,11 +18,17 @@ Fairly self explanatory.
 ### 3. Preprocessing/Accelerator python scripts
 #### Additional Files
 ##### In models2chip/:
-1) livephoneDataReader.py —> dnn_models/scripts
-2) livephone_utils.py  —> dnn_models/scripts
-3) run_demo_model.py  —> dnn_models/scripts
-4) chipDemo.py  —> si_test/scripts
-5) run_demochip_prediction.py  —> si_test/scripts
+1) livephoneDataReader.py - The program finds the most recent HAR_.csv input data generated from the HAR iOS Data Logger app,
+ preprocesses the data into windows, and saves it as an .npz format that is accessible to the Models2Chip code. The program then calls gen_acts_hex() from Models2Chip to create hex files for all the preprocessed input data.
+     * located —> dnn_models/scripts
+2) livephone_utils.py - This file has the helper functions for livephoneDataReader.py
+     * located —> dnn_models/scripts
+3) run_demo_model.py - The program is a varied version of run_sw_model.py. It just outputs the predicted activity - it does not produce performance metrics since it does not know the actual labels for the test data. The main function can be called in livephoneDatareader.py
+     * located —> dnn_models/scripts
+4) chipDemo.py - The program calls run_demochip_prediction.py over an inputted example range. chipDemo.py is in the Models2Chip directory --> models2chip/si_test/scripts/chipDemo.py. This program is executed every time the "Predict" button in the HAR GUI is clicked.
+     * located —> si_test/scripts
+5) run_demochip_prediction.py - The program is a varied version of run_sm2_prediction.py. It just outputs the predicted activity - it does not produce performance metrics since it does not know the actual labels for the test data. The main function is called in chipDemo.py
+     * located —> si_test/scripts
 #### Modified Files
 1) dnn_models/scripts/dataset_utils.py
     * changed get_dataset_npz_path()
@@ -38,13 +44,20 @@ label_correct = hw_label —> label_margin = classes…; all the results except 
 4) dnn_models/scripts/paths.py, si_test/scripts/path.py, and si_test/scripts/sm2_usb_devices.py
     * updated as per your configuration
 
-### 4. HTML/CSS/php GUI
-To run the demo, set up a php server in the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory using the following command in Terminal:
+### 4. GUI
+A GUI was created to have a centralized interface to run all the preprocessing/accelerator python scripts and see the predicted activity. The GUI was designed using HTML/CSS with bootstrap templates. The interface has 3 buttons:
+1) Predict - an Ajax request is associated with the button so once it's clicked, a php file executes livedatareader.py; the number of test samples is returned
+2) Memory - an Ajax request is associated with the button so once it's clicked, a php file executes load_megamem.py
+3) Predict - an Ajax request is associated with the button so once it's clicked, a php file executes chipDemo.py n times for n test samples
+
+To run the GUI, navigate to the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory and set up a php server in the using the following command in Terminal:
+```
   php -S localhost:8000
-
+```
 Open a browser and access the following link to view the GUI:
+```
   http://localhost:8000/
-
+```
 ### 5. Deep learning accelerator and USB cable
 Nothing much to say here.
 
