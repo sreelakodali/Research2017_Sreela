@@ -3,19 +3,19 @@ Author: Sreela Kodali, kodali@princeton.edu
 This demo aims to use smartphone data and predict a user's physical activity - known as Human Activity Recognition (HAR).
 
 # How Does It Work
-(1) Raw accelerometer and gyroscope data is collected from an iPhone and saved as a .csv file.
-(2) The .csv file is sent to a local laptop via bluetooh AirDrop*
-(3) On the laptop, scripts are run to preprocess the raw data and generate input activation hex files.
-(4) With USB-UART, weights of a trained HAR DNN model are loaded from the laptop into the memory of a deep learning accelerator.
-(5) A script is run on the laptop to run the input hex files on the deep learning accelerator. The predicted activity is displayed in a friendly interface.
+1) Raw accelerometer and gyroscope data is collected from an iPhone and saved as a .csv file.
+2) The .csv file is sent to a local laptop via bluetooh AirDrop*
+3) On the laptop, scripts are run to preprocess the raw data and generate input activation hex files.
+4) With USB-UART, weights of a trained HAR DNN model are loaded from the laptop into the memory of a deep learning accelerator.
+5) A script is run on the laptop to run the input hex files on the deep learning accelerator. The predicted activity is displayed in a friendly interface.
 * Note: if the local laptop is not an Apple device with the bluetooth AirDrop feature, the .csv file can also be sent via email/text. The iOS data collection application will prompt which method to send the raw data.
 
 # Components
-(1) iPhone with Data Collection App
-(2) Laptop with internet/bluetooth capabilities
-(3) Preprocessing python scripts and python scripts to communicate with the deep learning accelerator
-(4) HTML/CSS/php GUI
-(5) Deep learning accelerator and USB cable
+1) iPhone with Data Collection App
+2) Laptop with internet/bluetooth capabilities
+3) Preprocessing python scripts and python scripts to communicate with the deep learning accelerator
+4) HTML/CSS/php GUI
+5) Deep learning accelerator and USB cable
 
 
 The full demo takes raw acc/gyro data from an iPhone, generates the input activation hex files, runs the hex files on the chip, and outputs the predicted physical activity.
