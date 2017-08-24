@@ -2,7 +2,7 @@
 Note: the filename is a misnomer - this works on multiple HAR datasets
 Compatible with UCI Opportunity, Daphnet Gait, PAMAP2, UCI Smartphone Raw, UCI Smartphone Processed
 
-This 5-layered model is based off of Hammerla et al 2016 paper
+This 5-layered model is based off of Hammerla et al 2016 paper: https://arxiv.org/pdf/1604.08880.pdf
 
 These files can be found in dl-models, in the opportunityHAR branch, or in this path:
 /group/vlsiarch/kodali/dl-models
@@ -43,5 +43,5 @@ If adding a new dataset, add an additional elif() statement to the set of statem
 * self.sensor_features = no. of discrete parameters from a single dataset sample
 * self.nb_classes = no. of classes of the dataset 
 
-### Default topology:
+## Default topology:
 Input > hidden_dim > hidden_dim > hidden_dim > hidden dim > nb_classes
