@@ -44,11 +44,11 @@ All these scripts are in models2chip. Some files are new additions while others 
 ### 4. GUI
 The GUI can be found in the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory. 
 This GUI was created to have a centralized interface to run all the preprocessing/accelerator python scripts and see the predicted activity. The GUI was designed using HTML/CSS with bootstrap templates. The interface has 3 buttons:
-1) **Process** - an Ajax request is associated with the button so once 'Process' is clicked, a php file executes livedatareader.py; the number of test samples is returned
-2) **Memory** - an Ajax request is associated with the button so once 'Memory' is clicked, a php file executes load_megamem.py
-3) **Predict** - an Ajax request is associated with the button so once 'Predict' is clicked, a php file executes chipDemo.py n times for n test samples and returns the predicted activities; n test samples is extracted from when 'Process' was clicked
+1) **Process** - an Ajax request is associated with the button so once 'Process' is clicked, hexfiles.php executes livedatareader.py; the number of test samples is returned
+2) **Memory** - an Ajax request is associated with the button so once 'Memory' is clicked, loadmem.php executes load_megamem.py
+3) **Predict** - an Ajax request is associated with the button so once 'Predict' is clicked, chipPredict.py executes chipDemo.py n times for n test samples and returns the predicted activities; n test samples is extracted from when 'Process' was clicked
 
-In the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory, one will find index.html, css style formats, support files, and php scripts to help execute the aforementioned preprocessing/accelerator python scripts.
+In the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory, one will find index.html, css style formats, support files, and php scripts to help execute the aforementioned preprocessing/accelerator python scripts. In the three php scripts (hexfiles, loadmem, and chipPredict), make sure to change the directory to the models2chip directory.
 To run the GUI, navigate to the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory and set up a php server using the following command in Terminal:
 ```
   php -S localhost:8000
