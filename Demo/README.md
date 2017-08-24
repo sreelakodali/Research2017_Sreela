@@ -14,7 +14,7 @@ This demo aims to use smartphone data and predict a user's physical activity - k
 ### 1. iPhone with iOS Data Collection App
 Learn more about the app and get it here: https://github.com/sreelakodali/HAR_DataApp_iOS
 ### 2. Laptop with internet/bluetooth capabilities
-Fairly self explanatory.
+Self explanatory. If the laptop is an Apple device, AirDrop can be used to send the iOS data directly to the Downlaods directory of the laptop.
 ### 3. Preprocessing/Accelerator python scripts
 All these scripts are in models2chip. Some files are new additions while others are modifications of existing files.
 #### Additional Files
@@ -45,11 +45,13 @@ label_correct = hw_label —> label_margin = classes…; all the results except 
     * updated as per your configuration
 
 ### 4. GUI
-A GUI was created to have a centralized interface to run all the preprocessing/accelerator python scripts and see the predicted activity. The GUI was designed using HTML/CSS with bootstrap templates. The interface has 3 buttons:
-1) Predict - an Ajax request is associated with the button so once it's clicked, a php file executes livedatareader.py; the number of test samples is returned
-2) Memory - an Ajax request is associated with the button so once it's clicked, a php file executes load_megamem.py
-3) Predict - an Ajax request is associated with the button so once it's clicked, a php file executes chipDemo.py n times for n test samples
+The GUI can be found in the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory. 
+This GUI was created to have a centralized interface to run all the preprocessing/accelerator python scripts and see the predicted activity. The GUI was designed using HTML/CSS with bootstrap templates. The interface has 3 buttons:
+1) Process - an Ajax request is associated with the button so once 'Process' is clicked, a php file executes livedatareader.py; the number of test samples is returned
+2) Memory - an Ajax request is associated with the button so once 'Memory' is clicked, a php file executes load_megamem.py
+3) Predict - an Ajax request is associated with the button so once 'Predict' is clicked, a php file executes chipDemo.py n times for n test samples and returns the predicted activities; n test samples is extracted from when 'Process' was clicked
 
+In the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory, one will find index.html, css style formats, support files, and php scripts to help execute the aforementioned preprocessing/accelerator python scripts.
 To run the GUI, navigate to the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory and set up a php server using the following command in Terminal:
 ```
   php -S localhost:8000
