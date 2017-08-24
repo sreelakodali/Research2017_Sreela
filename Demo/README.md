@@ -16,8 +16,8 @@ Learn more about the app and get it here: https://github.com/sreelakodali/HAR_Da
 ### 2. Laptop with internet/bluetooth capabilities
 Self explanatory. If the laptop is an Apple device, AirDrop can be used to send the iOS data directly to the Downlaods directory of the laptop.
 ### 3. Preprocessing/Accelerator python scripts
-All these scripts are in models2chip. Some files are new additions while others are modifications of existing files.
-#### Additional Files
+All these scripts are in models2chip. Some files are new additions while others are modifications of existing files. Make sure to place and update the files in the appropriate models2chip directories.
+#### New Additional Files
 1) **livephoneDataReader.py** - The program finds the most recent HAR_.csv input data generated from the HAR iOS Data Logger app,
  preprocesses the data into windows, and saves it as an .npz format that is accessible to the Models2Chip code. The program then calls gen_acts_hex() from Models2Chip to create hex files for all the preprocessed input data.
      * located —> dnn_models/scripts
