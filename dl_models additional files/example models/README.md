@@ -1,8 +1,10 @@
-# Fully-connected NN Model for Human Activity Recognition (HAR)
+# Fully-connected NN Model for Human Activity Recognition
 Note: the filename is a misnomer - this works on multiple HAR datasets
 Compatible with UCI Opportunity, Daphnet Gait, PAMAP2, UCI Smartphone Raw, UCI Smartphone Processed
 Based off of Hammerla et al 2016 paper
 
+These files can be found in dl-models, in the opportunityHAR branch, or in this path:
+/group/vlsiarch/kodali/dl-models
 
 Each HAR dataset has a different filename, window sizes, overlap fractions, hidden dimension layer size, no. of sensor features,  and no. of classes.
 If adding a new dataset, add an additional elif() statement to the set of statements on line xyz with the aforementioned parameters.
@@ -15,5 +17,5 @@ If adding a new dataset, add an additional elif() statement to the set of statem
 * self.sensor_features = no. of discrete parameters from a single dataset sample
 * self.nb_classes = no. of classes of the dataset 
 
-###Default topology:
+### Default topology:
 Input > hidden_dim > hidden_dim > hidden_dim > hidden dim > nb_classes
