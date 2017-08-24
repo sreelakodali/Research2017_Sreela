@@ -1,4 +1,4 @@
-# Human Activity Recognition Demo
+# HAR: Demo
 ### Author: Sreela Kodali, kodali@princeton.edu
 This demo aims to use smartphone data and predict a user's physical activity - known as Human Activity Recognition (HAR).
 
