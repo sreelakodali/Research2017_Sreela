@@ -33,7 +33,7 @@ Note: If there are validation sets, make sure to uncomment lines 161-162/170-171
 
 ## Parameters for Datasets
 Each HAR dataset has a different filename, window sizes, overlap fractions, hidden dimension layer size, no. of sensor features,  and no. of classes.
-If adding a new dataset, add an additional elif() statement to the set of statements on line xyz with the aforementioned parameters.
+If adding a new dataset, add an additional elif() statement to the set of statements on line 114 with the aforementioned parameters.
 * self.datafilename = 'name' from name.hdf5
 * self.window_size = no. of dataset samples you want in a window;
   for context, a window is the input to the NN so self.window_size is the number of dataset samples that will be concatenated and inputted into the network
