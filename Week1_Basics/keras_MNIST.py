@@ -1,6 +1,8 @@
 # Sreela Kodali - MNIST on Keras
 # June 21st, 2017  
 
+
+
 from __future__ import print_function                                          
 import keras
 from keras.models import Sequential
