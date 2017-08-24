@@ -12,7 +12,7 @@ chipDemo.py  —> si_test/scripts
 run_demochip_prediction.py  —> si_test/scripts
 
 (2) HTML/CSS/PHP GUI
-HAR_GUI.zip
+HARhtmlcss/startbootstrap-freelancer-1.0.0/*
 
 (3) iOS Data Collection App
 
@@ -33,3 +33,11 @@ label_correct = hw_label —> label_margin = classes…; all the results except 
 
 Note: Make sure to update dnn_models/scripts/paths.py, si_test/scripts/path.py, and si_test/scripts/sm2_usb_devices.py
 for your configuration.
+
+To run the demo, set up a php server in the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory using the following command:
+
+  php -S localhost:8000
+
+Open a browser and access the following link to view the GUI:
+
+  http://localhost:8000/
