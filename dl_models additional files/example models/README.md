@@ -1,5 +1,5 @@
-# Fully-connected NN Model for Human Activity Recognition
-Note: the filename is a misnomer - this works on multiple HAR datasets
+# HAR: Fully-connected NN Model
+Note: the filenames are misnomers - this works on multiple HAR datasets
 Compatible with UCI Opportunity, Daphnet Gait, PAMAP2, UCI Smartphone Raw, UCI Smartphone Processed
 
 This 5-layered model is based off of Hammerla et al 2016 paper: https://arxiv.org/pdf/1604.08880.pdf
