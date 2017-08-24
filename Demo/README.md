@@ -11,11 +11,11 @@ This demo aims to use smartphone data and predict a user's physical activity - k
 * Note: if the local laptop is not an Apple device with the bluetooth AirDrop feature, the .csv file can also be sent via email/text. The iOS data collection application will prompt which method to send the raw data.
 
 # Components
-## 1) iPhone with iOS Data Collection App
+### 1) iPhone with iOS Data Collection App
 Learn more about the app and get it here: https://github.com/sreelakodali/HAR_DataApp_iOS
-## 2) Laptop with internet/bluetooth capabilities
+### 2) Laptop with internet/bluetooth capabilities
 Fairly self explanatory.
-## 3) Preprocessing/Accelerator python scripts
+### 3) Preprocessing/Accelerator python scripts
 #### Additional Files
 ##### In models2chip/:
 1) livephoneDataReader.py —> dnn_models/scripts
@@ -38,14 +38,14 @@ label_correct = hw_label —> label_margin = classes…; all the results except 
 4) dnn_models/scripts/paths.py, si_test/scripts/path.py, and si_test/scripts/sm2_usb_devices.py
     * updated as per your configuration
 
-## 4) HTML/CSS/php GUI
+### 4) HTML/CSS/php GUI
 To run the demo, set up a php server in the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory using the following command in Terminal:
   php -S localhost:8000
 
 Open a browser and access the following link to view the GUI:
   http://localhost:8000/
 
-## 5) Deep learning accelerator and USB cable
+### 5) Deep learning accelerator and USB cable
 Nothing much to say here.
 
 
