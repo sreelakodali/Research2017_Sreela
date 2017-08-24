@@ -29,6 +29,8 @@ All these scripts are in models2chip. Some files are new additions while others 
      * located —> si_test/scripts
 5) **run_demochip_prediction.py** - The program is a varied version of run_sm2_prediction.py. It just outputs the predicted activity - it does not produce performance metrics since it does not know the actual labels for the test data. The main function is called in chipDemo.py
      * located —> si_test/scripts
+6) **dnn_Demo.py** - The program is a varied version of dnn.py. It eliminates the comparison with y-test/actual labels so there are no accuracy and performance metrics and most print statements are eliminated to ensure only the activities are passed through to the HAR GUI. Also, the number of bytes allocated to get the output values is rounded up to an increment of 8 bytes.
+     * located —> si_test/scripts
 #### Modified Files
 1) **dnn_models/scripts/dataset_utils.py**
     * changed get_dataset_npz_path()
@@ -36,12 +38,7 @@ All these scripts are in models2chip. Some files are new additions while others 
 2) **si_test/scripts/dataset_utils.py**
     * changed get_dataset_npz_path()
     * changed get_dataset_inputs_dir()
-3) **si_test/scripts/dnn.py**
-    * made sure bytes allocated were increments of 8 and no. of classes evaluated was correct
-    * commented out most print statements (i.e. line 58, 116, 121, 124, 154, 157, 308, 310, 328, 362)
-    * commented out lines related to comparing with labeled results (i.e. y_test = load_from_dataset_npz—> if is_one_hot();
-label_correct = hw_label —> label_margin = classes…; all the results except hw_label)
-4) **dnn_models/scripts/paths.py, si_test/scripts/path.py, and si_test/scripts/sm2_usb_devices.py**
+3) **dnn_models/scripts/paths.py, si_test/scripts/path.py, and si_test/scripts/sm2_usb_devices.py**
     * updated as per your configuration
 
 ### 4. GUI
