@@ -19,7 +19,5 @@ The code for Opportunity is based off of the 2016 N Hammerla et al HAR paper: ht
 
 ### Matlab
 Initially I used Matlab to work with the datasets. A few of the scripts are shared in the matlab folder.
-
-The .mat file with Opportunity values is here: https://drive.google.com/open?id=0B1gxxIIZaFQWSDk2Yy1VX1R3LWs
-
-The .mat file with PAMAP2 values is here: https://drive.google.com/open?id=0B1gxxIIZaFQWUUtyQU1CVkNiTzg
+- The .mat file with Opportunity values is here: https://drive.google.com/open?id=0B1gxxIIZaFQWSDk2Yy1VX1R3LWs
+- The .mat file with PAMAP2 values is here: https://drive.google.com/open?id=0B1gxxIIZaFQWUUtyQU1CVkNiTzg
