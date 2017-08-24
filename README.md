@@ -9,6 +9,6 @@ An overview of my work:
 3) **HAR_Datasets/** - Dataset extraction and preprocessing scripts for different Human Activity Recognition Datasets
 4) **dl_models additional files/example models/** - DNN models for HAR datasets
 5) **8-8-2017_Presentation.pptx** - an update to the lab group on what I was working on
-6) **Demo/** - processing and GUI for running a smartphone-based HAR demo
+6) **Demo/** - processing scripts and GUI for running a smartphone-based HAR demo
     * iOS Demo App - https://github.com/sreelakodali/HAR_DataApp_iOS
 
