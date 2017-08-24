@@ -29,10 +29,10 @@ filename.hdf5
  .../inputs ->  a x b array, a samples, b sensor features; preferably float64 
  .../targets ->  preferably int64 integers, target values MUST be consecutive integers and are numbered starting from 1 (not 0)
 
- Note: If there are validation sets, make sure to uncomment lines xy for preprocessing and set the last two #parameters in line z for set_data() as x_val and y_val in lieu of x_test and y_test
+ Note: If there are validation sets, make sure to uncomment lines 161-162/170-171 for preprocessing and set the last two parameters in line 177 for set_data() as x_val and y_val in lieu of x_test and y_test
 
  Each HAR dataset has a different filename, window sizes, overlap fractions, hidden dimension layer size, no. of sensor features,  and no. of classes.
- If adding a new dataset, add an additional elif() statement to the set of statements on line xyz with the aforementioned parameters.
+ If adding a new dataset, add an additional elif() statement to the set of statements on line 114 with the aforementioned parameters.
  self.datafilename = 'name' from name.hdf5
  self.window_size = no. of dataset samples you want in a window;
   for context, a window is the input to the NN so self.window_size is the number of dataset samples that will be concatenated and inputted into the network
