@@ -14,28 +14,19 @@ These files can be found in dl-models, in the **opportunityHAR branch**, or in t
 4) Create two subdirectories for 'HAR', 'Data' and 'Results'
 5) In the .../dl-models/HAR/Data directory, you can put .hdf5 files for different HAR datasets.
  All datafiles must adhere to the following format:
-filename.hdf5
+ 
+**filename.hdf5**
 
-|_test
- 
-    |_ inputs
-   
-    |_targets 
-   
-|_training
- 
-    |_ inputs
-   
-    |_targets 
-   
- Optional
- 
-|_validation
- 
-    |_ inputs
-   
-    |_targets 
-   
+- **test**
+    - inputs
+    - targets 
+- **training**
+    - inputs
+    - targets 
+- **Optional: validation**
+    - inputs
+    - targets 
+    
  where
  
  .../inputs ->  a x b array, a samples, b sensor features; preferably float64 
