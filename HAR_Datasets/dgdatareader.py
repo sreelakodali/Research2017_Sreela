@@ -103,5 +103,3 @@ dset3 = f.create_dataset('/training/inputs', data = dsinputs_trainDG, dtype='flo
 dset4 = f.create_dataset('/training/targets', data = dstargets_trainDG, dtype='int64')
 dset5 = f.create_dataset('/validation/inputs', data = dsinputs_valDG, dtype='float64')
 dset6 = f.create_dataset('/validation/targets', data = dstargets_valDG, dtype='int64')
-
-
