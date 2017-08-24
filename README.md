@@ -3,7 +3,7 @@
 
 This repository contains some of the projects I worked on in summer 2017 at Harvard's John Paulson School of Engineering. I focused primarily on developing a **Human Activity Recognition (HAR)** system with a wearables and a low power deep learning accelerator.
 
-The main things I worked on include:
+Highlights include:
 1) **Week1_Basics/** - My first NN models with Keras
 2) **Research Overview of DL Datasets** - https://docs.google.com/spreadsheets/d/1ajeK8-pnzMp9eDHcoDGjyhsU60la29nnQOqTpVo7UBI/edit?usp=sharing
 3) **HAR_Datasets/** - Dataset extraction and preprocessing scripts for different Human Activity Recognition Datasets
