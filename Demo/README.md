@@ -39,7 +39,7 @@ All these scripts are in models2chip. Some files are new additions while others 
     * changed get_dataset_npz_path()
     * changed get_dataset_inputs_dir()
 3) **dnn_models/scripts/paths.py, si_test/scripts/path.py, and si_test/scripts/sm2_usb_devices.py**
-    * updated as per your configuration
+    * update as per your configuration
 
 ### 4. GUI
 The GUI can be found in the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory. 
