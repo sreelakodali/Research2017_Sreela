@@ -1,11 +1,37 @@
 # Fully-connected NN Model for Human Activity Recognition
 Note: the filename is a misnomer - this works on multiple HAR datasets
 Compatible with UCI Opportunity, Daphnet Gait, PAMAP2, UCI Smartphone Raw, UCI Smartphone Processed
-Based off of Hammerla et al 2016 paper
+
+This 5-layered model is based off of Hammerla et al 2016 paper
 
 These files can be found in dl-models, in the opportunityHAR branch, or in this path:
 /group/vlsiarch/kodali/dl-models
 
+## Instructions
+1) To run the model, make sure it is imported and referred to in #the table in run_models.py
+2) Make sure the run.sh file refers to it accordingly
+3) In the folder .../dl-models/, create a new directory 'HAR'
+4) Create two subdirectories for 'HAR', 'Data' and 'Results'
+5) In the .../dl-models/HAR/Data directory, you can put .hdf5 files for different HAR datasets.
+ All datafiles must adhere to the following format:
+filename.hdf5
+ |_test
+   |_ inputs
+   |_targets 
+ |_training
+   |_ inputs
+   |_targets 
+ Optional
+ |_validation
+   |_ inputs
+   |_targets 
+ where
+ .../inputs ->  a x b array, a samples, b sensor features; preferably float64 
+ .../targets ->  preferably int64 integers, target values MUST be consecutive integers and are numbered starting from 1 (not 0)
+
+Note: If there are validation sets, make sure to uncomment lines 161-162/170-171 for preprocessing and set the last two parameters in line 177 for set_data() as x_val and y_val in lieu of x_test and y_test
+
+## Parameters for Datasets
 Each HAR dataset has a different filename, window sizes, overlap fractions, hidden dimension layer size, no. of sensor features,  and no. of classes.
 If adding a new dataset, add an additional elif() statement to the set of statements on line xyz with the aforementioned parameters.
 * self.datafilename = 'name' from name.hdf5
