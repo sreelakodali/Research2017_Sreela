@@ -50,7 +50,7 @@ A GUI was created to have a centralized interface to run all the preprocessing/a
 2) Memory - an Ajax request is associated with the button so once it's clicked, a php file executes load_megamem.py
 3) Predict - an Ajax request is associated with the button so once it's clicked, a php file executes chipDemo.py n times for n test samples
 
-To run the GUI, navigate to the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory and set up a php server in the using the following command in Terminal:
+To run the GUI, navigate to the HARhtmlcss/startbootstrap-freelancer-1.0.0 directory and set up a php server using the following command in Terminal:
 ```
   php -S localhost:8000
 ```
