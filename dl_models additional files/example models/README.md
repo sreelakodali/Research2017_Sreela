@@ -16,7 +16,6 @@ These files can be found in dl-models, in the **opportunityHAR branch**, or in t
  All datafiles must adhere to the following format:
  
 **filename.hdf5**
-
 - **test**
     - inputs
     - targets 
