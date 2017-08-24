@@ -10,7 +10,8 @@ The datasets are:
     * https://archive.ics.uci.edu/ml/datasets/Daphnet+Freezing+of+Gait
 4. Smartphone-based HAR - Basic Physical Activities
     * https://archive.ics.uci.edu/ml/datasets/Smartphone-Based+Recognition+of+Human+Activities+and+Postural+Transitions
-The **HAR_Dataset.zip** file has the resulting .hdf5 files for each dataset.
+
+**HAR_Dataset.zip** has the resulting .hdf5 files for each dataset. It can be found here: https://drive.google.com/open?id=0B1gxxIIZaFQWWkFiUC00Y01XRE0
 
 * Note: The processing script for the Opportunity dataset can be found here: https://github.com/nhammerla/deepHAR
 The code for Opportunity is based off of the 2016 N Hammerla et al HAR paper: https://arxiv.org/pdf/1604.08880.pdf
