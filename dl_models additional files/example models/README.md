@@ -16,25 +16,25 @@ These files can be found in dl-models, in the **opportunityHAR branch**, or in t
  All datafiles must adhere to the following format:
 filename.hdf5
 
- |_test
+|_test
  
-   |_ inputs
+    |_ inputs
    
-   |_targets 
+    |_targets 
    
- |_training
+|_training
  
-   |_ inputs
+    |_ inputs
    
-   |_targets 
+    |_targets 
    
  Optional
  
- |_validation
+|_validation
  
-   |_ inputs
+    |_ inputs
    
-   |_targets 
+    |_targets 
    
  where
  
