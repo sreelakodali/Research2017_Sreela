@@ -11,7 +11,7 @@ This demo aims to use smartphone data and predict a user's physical activity - k
 * Note: if the local laptop is not an Apple device with the bluetooth AirDrop feature, the .csv file can also be sent via email/text. The iOS data collection application will prompt which method to send the raw data.
 
 # Components
-1) iPhone with Data Collection App
+1) iPhone with iOS Data Collection App - https://github.com/sreelakodali/HAR_DataApp_iOS
 2) Laptop with internet/bluetooth capabilities
 3) Preprocessing python scripts and python scripts to communicate with the deep learning accelerator
 4) HTML/CSS/php GUI
