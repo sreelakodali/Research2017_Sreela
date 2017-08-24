@@ -16,3 +16,8 @@ The datasets are:
 
 * Note: The processing script for the Opportunity dataset can be found here: https://github.com/nhammerla/deepHAR
 The code for Opportunity is based off of the 2016 N Hammerla et al HAR paper: https://arxiv.org/pdf/1604.08880.pdf
+
+### Matlab
+Initially I used Matlab to work with the datasets. A few of the scripts are accessible.
+The .mat file with Opportunity values is here: https://drive.google.com/open?id=0B1gxxIIZaFQWSDk2Yy1VX1R3LWs
+The .mat file with PAMAP2 values is here: https://drive.google.com/open?id=0B1gxxIIZaFQWUUtyQU1CVkNiTzg
