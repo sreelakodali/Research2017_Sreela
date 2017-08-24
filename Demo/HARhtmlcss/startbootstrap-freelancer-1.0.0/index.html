@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Human Activity Recognition</title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+    <style>
+div.ex1 {
+    width:550px;
+    margin: auto;
+}
+</style>
+
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Header VERY IMPORTNT-->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        
+                        <span class="name">Human Activity Recognition</span>
+
+                    </div>
+
+                    <img class="img-responsive" src="img/Run.png" alt="">
+
+                    <div class="intro-text">
+                        <span class="skills" id="status"> First, click 'Process' to prepare the new smartphone data. </span>
+                        </div>
+                    </div>
+
+
+                    <button class="btn btn-red" id="red">Process</button>
+                    <script>
+                    $('#red').on('click', function() {
+                        var clicks = 0
+                        $.ajax({
+                            method: 'get',
+                            url: "hexfiles.php",
+                            success: function(data) {
+                                document.getElementById("status").innerHTML = "Next, click 'Memory' load the weights into memory.";
+                                clicks = data;
+                                document.getElementById("clicks").innerHTML = clicks;
+                                document.getElementById("seconds").innerHTML = (clicks*32 + 32)/50;
+                            }
+                        });
+                        return false
+                    });
+                    </script>
+
+                    <button class="btn btn-reset" id="mem" >Memory</button>
+                     <script>
+                    $('#mem').on('click', function() {
+                        $.ajax({
+                            method: 'get',
+                            url: "loadmem.php",
+                            success: function(data) {
+                                document.getElementById("status").innerHTML = "Now click 'Predict' to see your physical activity.";
+                            }
+                        });
+                        return false
+                    });
+                    </script>
+
+
+                    <div>
+                     <button class="btn btn-green" id="green" onClick="onClick()">Predict </button>
+                     <script>
+                    $('#green').on('click', function() {
+                        var max = document.getElementById("clicks").innerHTML;
+                        var count = 0;
+                        for (i = 0; i < max; i++){
+                            document.getElementById("status").innerHTML = "Predicting...";
+                            $.ajax({
+                                method: 'get',
+                                url: "chipPredict.php",
+                                data: ({'clickCount': i}),
+                                success: function(data) {
+                                    $('#data').text(data);
+                                    count += 1;
+                                    if (count == max) {
+                                        document.getElementById("status").innerHTML = "Complete. Click 'Process' to prepare more smartphone data.";
+                                        document.getElementById("clicks").innerHTML = 0;
+                                        document.getElementById("seconds").innerHTML = 0;
+                                    }
+                                }
+                            });
+                         }
+                    });
+                    </script>
+
+                </div>
+
+            </div>
+                    <hr class="star-light">
+                    <hr class="star-light">
+                    <p>No. of Samples: <a id="clicks">0</a></p>
+                     <p>Total Time (s): <a id="seconds">0</a></p>
+
+                    <div class="intro-text"><div class="ex1">
+                        <span class="skills" id="data"> Activity</span>
+                        </div></div>
+                    </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
+
+</body>
+
+</html>
