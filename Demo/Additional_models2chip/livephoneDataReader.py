@@ -12,6 +12,7 @@
 # Example call:
 # python -u livephoneDataReader.py -d UCISmartphoneRaw -t 72 72 72 72 -l TC
 
+
 import argparse
 import numpy as np
 import math
@@ -49,8 +50,11 @@ def cli():
 if __name__=='__main__':
   args = cli()
 
+  # Set rawDatapath to where the .csv file from the ios app is deposited
+  rawDatapath = '/Users/Sreela/Downloads/'
+
   # Find the most recent HAR raw .csv file
-  mainpath = '/Users/Sreela/Downloads/HAR_*.csv'
+  mainpath = rawDatapath + 'HAR_*.csv'
   newest = max(glob.iglob(mainpath), key=os.path.getctime)
 
   # Extract the file name
@@ -73,8 +77,11 @@ if __name__=='__main__':
   # Extract number of samples - 1 in testData
   e = np.shape(testData)[0] - 1
 
+  # Set MtoCpath to where models2chip is located
+  MtoCpath = '/Users/Sreela/Documents/School/Princeton/Year3/STARnet/Research2017_Sreela/models2chipCopy/'
+
   # Save preprocessed data as .npz
-  npzpath = '/Users/Sreela/Documents/School/Princeton/Year3/STARnet/Research2017_Sreela/models2chipCopy/datasets/UCISmartphoneRaw'
+  npzpath = MtoCpath + 'datasets/UCISmartphoneRaw'
   np.savez(os.path.join(npzpath, 'HAR'+f), x_test=testData)
 
   # Set the example range for gen_acts_hex()
