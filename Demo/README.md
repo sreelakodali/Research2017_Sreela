@@ -57,7 +57,8 @@ Open a browser and access the following link to view the GUI:
 ```
   http://localhost:8000/
 ```
-### 5. Deep learning accelerator and USB cable
-Nothing much to say here.
+### 5. Deep learning accelerator with USB-UART interface
+The following accelerator was used with a FT232R USB UART chip.
+http://vlsiarch.eecs.harvard.edu/wp-content/uploads/2017/02/whatmough_isscc2017.pdf
 
 
