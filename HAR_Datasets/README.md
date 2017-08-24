@@ -1,4 +1,4 @@
-# Human Activity Recognition: Dataset Extraction Scripts
+# Human Activity Recognition: Dataset Extraction and Preprocessing Scripts
 
 Each python script corresponds to a specific HAR dataset and transforms the raw data available online into a usable .hdf5 format with training, testing, and validation sets. Follow the instructions denoted in each script.
 
