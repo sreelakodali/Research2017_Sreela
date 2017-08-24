@@ -7,7 +7,7 @@ An overview of my work:
 1) **Week1_Basics/** - My first NN models with Keras
 2) **Research Overview of DL Datasets** - https://docs.google.com/spreadsheets/d/1ajeK8-pnzMp9eDHcoDGjyhsU60la29nnQOqTpVo7UBI/edit?usp=sharing
 3) **HAR_Datasets/** - Dataset extraction and preprocessing scripts for different Human Activity Recognition Datasets
-4) **dl_models additional files/example models/** - DNN models for HAR datasets; can also be found in /group/vlsiarch/kodali/dl-models/dl_models/models/ directory
+4) **dl_models additional files/example models/** - DNN models for HAR datasets
     * model performance - **"HAR Model Performance.xlsx"**
 5) **8-8-2017_Presentation.pptx** - an update to the lab group on what I was working on
 6) **Demo/** - processing scripts and GUI for running a smartphone-based HAR demo
