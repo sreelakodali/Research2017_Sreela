@@ -1,7 +1,7 @@
-README
-
-Human Activity Recognition (HAR) Demo
+# Human Activity Recognition (HAR) Demo
 Author: Sreela Kodali, kodali@princeton.edu
+
+The full demo takes raw acc/gyro data from an iPhone, generates the input activation hex files, runs the hex files on the chip, and outputs the predicted physical activity.
 
 Additional Files:
 (1) In models2chip/
